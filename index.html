@@ -1,243 +1,121 @@
-import React from 'react';
-import { 
-  Users, 
-  BookOpen, 
-  Target, 
-  Puzzle, 
-  Briefcase, 
-  TrendingUp, 
-  GraduationCap, 
-  ClipboardCheck,
-  Mail,
-  Zap,
-  Globe,
-  ShieldCheck,
-  Lightbulb,
-  Handshake,
-  Layout
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinergia Consultores | Gestión, Educación y Organización</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .brand-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #10b981 100%); }
+        .text-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
 
-const App = () => {
-  // Logo: Símbolo de "Vínculo Infinito" que representa la Sinergia entre áreas
-  const LogoSinergia = () => (
-    <svg viewBox="0 0 400 120" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#1e3a8a" />
-          <stop offset="100%" stopColor="#3b82f6" />
-        </linearGradient>
-        <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#10b981" />
-          <stop offset="100%" stopColor="#34d399" />
-        </linearGradient>
-      </defs>
-      
-      {/* Icono Geométrico: Dos arcos entrelazados que forman una 'S' abstracta */}
-      <g transform="translate(20, 20)">
-        {/* Arco Superior (Azul) */}
-        <path 
-          d="M20 40 A30 30 0 0 1 80 40 A15 15 0 0 0 50 40" 
-          stroke="url(#blueGrad)" 
-          strokeWidth="10" 
-          fill="none" 
-          strokeLinecap="round" 
-        />
-        {/* Arco Inferior (Verde) */}
-        <path 
-          d="M50 40 A15 15 0 0 0 20 40 A30 30 0 0 1 80 40" 
-          stroke="url(#greenGrad)" 
-          strokeWidth="10" 
-          fill="none" 
-          strokeLinecap="round" 
-          transform="rotate(180, 50, 40)"
-        />
-        {/* Nodos de conexión */}
-        <circle cx="20" cy="40" r="4" fill="#1e3a8a" />
-        <circle cx="80" cy="40" r="4" fill="#10b981" />
-      </g>
-      
-      {/* Texto de la Marca */}
-      <text x="115" y="55" fill="#1e3a8a" style={{ font: 'bold 38px sans-serif', letterSpacing: '-1px' }}>SINERGIA</text>
-      <text x="115" y="80" fill="#10b981" style={{ font: '600 16px sans-serif', letterSpacing: '5px' }}>CONSULTORES</text>
-    </svg>
-  );
-
-  return (
-    <div className="min-h-screen bg-white font-sans text-slate-800">
-      {/* Encabezado Informativo */}
-      <header className="bg-white border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="w-56">
-            <LogoSinergia />
-          </div>
-          <div className="flex items-center gap-3 text-blue-900 font-bold border-l border-slate-200 pl-6">
-            <Mail size={18} className="text-emerald-500" />
-            <span>Sinergiaconsultoressv@gmail.com</span>
-          </div>
+    <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="w-48">
+                <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="100%" stop-color="#10b981" />
+                        </linearGradient>
+                    </defs>
+                    <g transform="translate(10, 10)">
+                        <path d="M35 10 C45 10 45 0 55 0 C65 0 65 10 75 10 H85 V20 C85 30 95 30 95 40 C95 50 85 50 85 60 V70 H75 C65 70 65 80 55 80 C45 80 45 70 35 70 H25 V60 C25 50 15 50 15 40 C15 30 25 30 25 20 V10 H35 Z" fill="url(#brandGrad)" />
+                        <circle cx="45" cy="30" r="3" fill="#ffffff" />
+                        <circle cx="65" cy="50" r="3" fill="#ffffff" />
+                        <circle cx="35" cy="50" r="2" fill="#ffffff" />
+                        <path d="M45 30 L65 50 M45 30 L35 50" stroke="#ffffff" stroke-width="1.2" />
+                    </g>
+                    <text x="115" y="55" fill="#1e3a8a" style="font: bold 38px sans-serif; letter-spacing: -1px;">SINERGIA</text>
+                    <text x="115" y="80" fill="#10b981" style="font: 600 16px sans-serif; letter-spacing: 5px;">CONSULTORES</text>
+                </svg>
+            </div>
+            <div class="flex items-center gap-3 text-blue-900 font-bold border-l border-slate-200 pl-6">
+                <span class="text-emerald-500">✉</span>
+                <span class="text-sm md:text-base">Sinergiaconsultoressv@gmail.com</span>
+            </div>
         </div>
-      </header>
+    </header>
 
-      <main>
-        {/* Sección Principal */}
-        <section className="relative pt-16 pb-20 overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-bold uppercase tracking-widest mb-6 border border-blue-100">
-              <Layout size={14} /> Consultoría Estratégica Integral
+    <main>
+        <section class="relative pt-16 pb-20 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-bold uppercase tracking-widest mb-6 border border-blue-100">Consultoría Estratégica Integral</span>
+                <h1 class="text-5xl md:text-6xl font-black text-blue-900 mb-6 leading-tight">
+                    Diseño, Aprendizaje y <br/>
+                    <span class="text-emerald-500">Gestión Institucional</span>
+                </h1>
+                <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+                    Transformamos organizaciones mediante la gestión técnica de proyectos e innovación educativa.
+                </p>
             </div>
-            <h1 className="text-5xl md:text-6xl font-black text-blue-900 mb-6 leading-tight">
-              Diseño, Aprendizaje y <br/>
-              <span className="text-emerald-500">Gestión Institucional</span>
-            </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              Transformamos organizaciones mediante la gestión técnica de proyectos, innovación educativa y el fortalecimiento de procesos corporativos.
-            </p>
-          </div>
         </section>
 
-        {/* Áreas de Enfoque */}
-        <section className="max-w-6xl mx-auto px-6 mb-24">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Proyectos */}
-            <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 text-center">
-              <div className="w-14 h-14 bg-blue-900 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <Target className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">Proyectos</h3>
-              <p className="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Gestión Técnica</p>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Consultoría especializada en el diseño de propuestas, planificación de marcos lógicos y evaluación técnica de proyectos.
-              </p>
+        <section class="max-w-6xl mx-auto px-6 mb-24 grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:shadow-lg transition">
+                <div class="w-14 h-14 bg-blue-900 rounded-xl flex items-center justify-center mb-6 mx-auto text-white text-2xl">🎯</div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Proyectos</h3>
+                <p class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Gestión Técnica</p>
+                <p class="text-slate-500 text-sm">Diseño de propuestas, marcos lógicos y evaluación técnica.</p>
             </div>
-
-            {/* Educación */}
-            <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 text-center">
-              <div className="w-14 h-14 bg-emerald-500 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <GraduationCap className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">Educación</h3>
-              <p className="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Innovación Pedagógica</p>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Desarrollo de mallas curriculares y sistemas de formación profesional basados en las últimas tendencias educativas.
-              </p>
+            <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:shadow-lg transition">
+                <div class="w-14 h-14 bg-emerald-500 rounded-xl flex items-center justify-center mb-6 mx-auto text-white text-2xl">🎓</div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Educación</h3>
+                <p class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Innovación Pedagógica</p>
+                <p class="text-slate-500 text-sm">Desarrollo de mallas curriculares y formación profesional.</p>
             </div>
-
-            {/* Organizacional */}
-            <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 text-center">
-              <div className="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <Briefcase className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">Organizacional</h3>
-              <p className="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Estructura Corporativa</p>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Alineación de objetivos institucionales y optimización de procesos para garantizar la eficiencia y sostenibilidad.
-              </p>
+            <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:shadow-lg transition">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 mx-auto text-white text-2xl">💼</div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Organizacional</h3>
+                <p class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">Estructura Corporativa</p>
+                <p class="text-slate-500 text-sm">Optimización de procesos para eficiencia y sostenibilidad.</p>
             </div>
-          </div>
         </section>
 
-        {/* Sección: Nuestros Valores */}
-        <section className="bg-slate-900 py-24 mb-24 relative overflow-hidden">
-          <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Nuestros Valores</h2>
-            <p className="text-blue-200/50 max-w-xl mx-auto mb-16">
-              Principios que guían cada una de nuestras intervenciones y aseguran la excelencia en nuestros resultados.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { 
-                  icon: <ShieldCheck className="text-emerald-400" size={32} />, 
-                  title: "Integridad", 
-                  desc: "Actuamos con ética y transparencia en todos los niveles de nuestra gestión profesional." 
-                },
-                { 
-                  icon: <Lightbulb className="text-emerald-400" size={32} />, 
-                  title: "Innovación", 
-                  desc: "Búsqueda constante de soluciones creativas y actualizadas para los retos organizacionales." 
-                },
-                { 
-                  icon: <Handshake className="text-emerald-400" size={32} />, 
-                  title: "Sinergia", 
-                  desc: "Creemos en el poder de la colaboración para generar un impacto mayor al de los esfuerzos aislados." 
-                }
-              ].map((val, idx) => (
-                <div key={idx} className="bg-white/5 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/10 flex flex-col items-center">
-                  <div className="mb-6">{val.icon}</div>
-                  <h4 className="text-xl font-bold text-white mb-3">{val.title}</h4>
-                  <p className="text-blue-100/60 text-sm leading-relaxed">{val.desc}</p>
+        <section class="bg-slate-900 py-20 text-center text-white">
+            <div class="max-w-5xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12">Nuestros Valores</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                        <div class="text-emerald-400 text-4xl mb-4">🛡️</div>
+                        <h4 class="text-xl font-bold mb-3">Integridad</h4>
+                        <p class="text-blue-100/60 text-sm">Ética y transparencia en todos los niveles de gestión.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                        <div class="text-emerald-400 text-4xl mb-4">💡</div>
+                        <h4 class="text-xl font-bold mb-3">Innovación</h4>
+                        <p class="text-blue-100/60 text-sm">Búsqueda constante de soluciones creativas.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                        <div class="text-emerald-400 text-4xl mb-4">🤝</div>
+                        <h4 class="text-xl font-bold mb-3">Sinergia</h4>
+                        <p class="text-blue-100/60 text-sm">Colaboración para generar impacto colectivo.</p>
+                    </div>
                 </div>
-              ))}
             </div>
-          </div>
         </section>
 
-        {/* Especialidades */}
-        <section className="max-w-4xl mx-auto px-6 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-blue-900">Portafolio de Especialidades</h2>
-            <div className="h-1 w-16 bg-emerald-500 mx-auto mt-3 rounded-full"></div>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              { 
-                icon: <ClipboardCheck size={24} />, 
-                title: "Gestión y Evaluación de Proyectos", 
-                desc: "Asesoría técnica para la formulación de proyectos, gestión de presupuestos y monitoreo de indicadores de desempeño." 
-              },
-              { 
-                icon: <BookOpen size={24} />, 
-                title: "Diseño y Desarrollo Curricular", 
-                desc: "Creación de programas formativos especializados y materiales pedagógicos alineados a perfiles profesionales." 
-              },
-              { 
-                icon: <Users size={24} />, 
-                title: "Fortalecimiento Organizacional", 
-                desc: "Optimización de la comunicación interna, liderazgo y cultura institucional para la mejora del clima laboral." 
-              }
-            ].map((service, i) => (
-              <div key={i} className="flex gap-6 p-8 bg-slate-50 border border-slate-100 rounded-2xl items-center">
-                <div className="text-blue-900 bg-white p-4 rounded-xl shadow-sm shrink-0">
-                  {service.icon}
+        <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+            <div class="bg-blue-900 rounded-[2.5rem] p-12 text-white shadow-2xl relative overflow-hidden">
+                <h2 class="text-3xl font-bold mb-6">Información de Contacto</h2>
+                <p class="text-blue-100/70 mb-8 max-w-md mx-auto">Para consultas sobre proyectos o servicios educativos, contáctenos.</p>
+                <div class="inline-flex items-center gap-4 py-4 px-8 bg-white/10 rounded-2xl border border-white/20">
+                    <span class="text-xl font-bold">Sinergiaconsultoressv@gmail.com</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-blue-900 mb-1">{service.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{service.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Cierre Informativo */}
-        <section className="max-w-4xl mx-auto px-6 pb-20">
-          <div className="bg-blue-900 rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400/10 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-            
-            <h2 className="text-3xl font-bold mb-6">Información de Contacto</h2>
-            <p className="text-blue-100/70 mb-8 max-w-md mx-auto">
-              Para consultas sobre consultoría, proyectos o servicios educativos, puede contactarnos a través de nuestra vía oficial.
-            </p>
-            
-            <div className="inline-flex flex-col md:flex-row items-center gap-4 py-4 px-8 bg-white/10 rounded-2xl border border-white/20">
-              <Mail size={22} className="text-emerald-400" />
-              <span className="text-xl font-bold tracking-tight">Sinergiaconsultoressv@gmail.com</span>
             </div>
-
-            <div className="mt-12 pt-8 border-t border-white/10 flex items-center justify-center gap-2 text-blue-200/40 font-bold text-[10px] uppercase tracking-[0.5em]">
-              <Globe size={12} /> El Salvador
-            </div>
-          </div>
         </section>
-      </main>
+    </main>
 
-      <footer className="py-8 text-center border-t border-slate-50">
-        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-          © {new Date().getFullYear()} SINERGIA CONSULTORES • Gestión · Educación · Organización
+    <footer class="py-8 text-center border-t border-slate-50">
+        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+            © 2026 SINERGIA CONSULTORES • EL SALVADOR
         </p>
-      </footer>
-    </div>
-  );
-};
+    </footer>
 
-export default App;
+</body>
+</html>
